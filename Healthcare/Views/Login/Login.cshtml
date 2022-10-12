@@ -4,6 +4,7 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
+    string errorMessage = ViewBag.errorMessage;
 }
 <!DOCTYPE html>
 
@@ -46,7 +47,7 @@
                     <br />
                     <button type="submit" id="login">Login</button>
                     <br />
-                    <div id="error">Invalid Input</div>
+                    <div id="error">@errorMessage</div>
                     <br />
                     <a href="#">Register</a>
                 </form>
