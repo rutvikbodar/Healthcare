@@ -10,20 +10,32 @@ namespace Healthcare.Controllers
 {
     public class HomeController : Controller
     {
+        private HealthcareDbContext context;
+        public HomeController(HealthcareDbContext context)
+        {
+            this.context = context;
+        }
+
+
+        [HttpGet]
+        public List<User> GetUsers()
+        {
+            return context.users.ToList();
+        }
+
+        [HttpPost]
+        public IActionResult AddUser(User user)
+        {
+            context.users.Add(user);
+            context.SaveChanges();
+            return Created("api/users/" + user.username, user);
+        }
+
+
         public IActionResult Index()
         {
             return View();
         }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
     }
 }
