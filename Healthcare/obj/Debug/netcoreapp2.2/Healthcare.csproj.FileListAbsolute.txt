@@ -7,7 +7,6 @@ C:\Users\LENOVO-PC\Desktop\Healthcare\Healthcare\bin\Debug\netcoreapp2.2\Healthc
 C:\Users\LENOVO-PC\Desktop\Healthcare\Healthcare\bin\Debug\netcoreapp2.2\Healthcare.pdb
 C:\Users\LENOVO-PC\Desktop\Healthcare\Healthcare\bin\Debug\netcoreapp2.2\Healthcare.Views.dll
 C:\Users\LENOVO-PC\Desktop\Healthcare\Healthcare\bin\Debug\netcoreapp2.2\Healthcare.Views.pdb
-C:\Users\LENOVO-PC\Desktop\Healthcare\Healthcare\obj\Debug\netcoreapp2.2\Healthcare.csproj.AssemblyReference.cache
 C:\Users\LENOVO-PC\Desktop\Healthcare\Healthcare\obj\Debug\netcoreapp2.2\Healthcare.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\LENOVO-PC\Desktop\Healthcare\Healthcare\obj\Debug\netcoreapp2.2\Healthcare.AssemblyInfoInputs.cache
 C:\Users\LENOVO-PC\Desktop\Healthcare\Healthcare\obj\Debug\netcoreapp2.2\Healthcare.AssemblyInfo.cs
@@ -32,3 +31,4 @@ C:\Users\LENOVO-PC\Desktop\Healthcare\Healthcare\obj\Debug\netcoreapp2.2\Healthc
 C:\Users\LENOVO-PC\Desktop\Healthcare\Healthcare\obj\Debug\netcoreapp2.2\Healthcare.pdb
 C:\Users\LENOVO-PC\Desktop\Healthcare\Healthcare\obj\Debug\netcoreapp2.2\Healthcare.genruntimeconfig.cache
 C:\Users\LENOVO-PC\Desktop\Healthcare\Healthcare\obj\Debug\netcoreapp2.2\Healthcare.csproj.CopyComplete
+C:\Users\LENOVO-PC\Desktop\Healthcare\Healthcare\obj\Debug\netcoreapp2.2\Razor\Views\Login\Login.cshtml.g.cs
