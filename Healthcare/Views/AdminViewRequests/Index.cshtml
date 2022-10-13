@@ -1,0 +1,38 @@
+﻿
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+
+    Layout = "AdminLayout";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <style>
+        tr, th {
+            border: 1px solid black;
+            min-width: 200px;
+        }
+    </style>
+    <title>All Requests Details</title>
+</head>
+<body>
+    <h3><label>All Requests Details</label></h3>
+    <br />
+    <table>
+        <tr>
+            <th><label>Medicine Category</label></th>
+            <th><label>Medicine Name</label></th>
+            <th><label>Requested Quantity</label></th>
+            <th><label>Requestor Name</label></th>
+            <th><label>Delivered Address</label></th>
+            <th><label>Requested Date</label></th>
+
+        </tr>
+    </table>
+</body>
+</html>

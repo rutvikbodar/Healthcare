@@ -76,6 +76,9 @@ namespace Healthcare
                 routes.MapRoute(
                     name: "adminViewDonations",
                     template: "{controller=AdminViewDonations}/{action=Index}");
+                routes.MapRoute(
+                    name: "adminViewRequests",
+                    template: "{controller=AdminViewRequests}/{action=Index}");
             });
             var scope = app.ApplicationServices.CreateScope();
             var context = scope.ServiceProvider.GetService<HealthcareDbContext>();
