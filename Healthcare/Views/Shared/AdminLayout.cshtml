@@ -1,9 +1,9 @@
 ﻿@{
     Layout = "_Layout";
     string loggedInUser = "";
-    if (TempData.Peek("loggedInUser") != null)
+    if (TempData.Peek("loggedInUsername") != null)
     {
-        loggedInUser = TempData.Peek("loggedInUser").ToString();
+        loggedInUser = TempData.Peek("loggedInUsername").ToString();
     }
 }
 

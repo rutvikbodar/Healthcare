@@ -49,7 +49,8 @@ namespace Healthcare.Controllers
                 {
                     if (searchedUser.username == "Admin")
                     {
-                        TempData["loggedInUser"] = searchedUser.username;
+                        TempData["loggedInUsername"] = searchedUser.username;
+                        TempData["loggedInAddress"] = searchedUser.address;
                         return RedirectToAction("Index", "AdminHome");
                     }
                     else
