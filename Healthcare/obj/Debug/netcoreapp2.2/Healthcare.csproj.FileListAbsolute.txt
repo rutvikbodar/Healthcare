@@ -33,3 +33,4 @@ C:\Users\LENOVO-PC\Desktop\Healthcare\Healthcare\obj\Debug\netcoreapp2.2\Healthc
 C:\Users\LENOVO-PC\Desktop\Healthcare\Healthcare\obj\Debug\netcoreapp2.2\Healthcare.csproj.CopyComplete
 C:\Users\LENOVO-PC\Desktop\Healthcare\Healthcare\obj\Debug\netcoreapp2.2\Razor\Views\Login\Login.cshtml.g.cs
 C:\Users\LENOVO-PC\Desktop\Healthcare\Healthcare\obj\Debug\netcoreapp2.2\Healthcare.csproj.AssemblyReference.cache
+C:\Users\LENOVO-PC\Desktop\Healthcare\Healthcare\obj\Debug\netcoreapp2.2\Razor\Views\Register\Index.cshtml.g.cs

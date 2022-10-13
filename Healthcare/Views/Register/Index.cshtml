@@ -1,0 +1,73 @@
+﻿@model Healthcare.User;
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    string errorMessage = ViewBag.errorMessage;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .fullBody {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            width: 100%;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 100px;
+            height: 500px;
+            width: 400px;
+            border: 1px solid grey;
+        }
+    </style>
+    <title>Login</title>
+</head>
+<body>
+    <div class="fullBody">
+        <div class="container">
+            <form method="post">
+                <h3>Register</h3>
+                <br />
+                <br />
+                <br />
+                <input asp-for="username" type="text" id="userName" placeholder="User name" />
+                <br />
+                <br />
+                <input asp-for="password" type="password" id="password" placeholder="Password" />
+                <br />
+                <br />
+                <input asp-for="age" type="number" id="age" placeholder="Age" />
+                <br />
+                <br />
+                <select asp-for="gender" >
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+                <br />
+                <br />
+                <input asp-for="address" id="address" type="text" placeholder="Address"/>
+                <br />
+                <br />
+                <div id="message">@errorMessage</div>
+                <br />
+                <br />
+                <button type="submit" id="register">REGISTER NOW</button>
+                <br />
+                <div id="error">@errorMessage</div>
+                <br />
+                <br />
+                <a href="#">Log in</a>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
