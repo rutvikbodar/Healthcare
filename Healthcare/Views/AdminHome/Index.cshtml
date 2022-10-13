@@ -30,6 +30,22 @@
             <th><label>Medicine Category</label></th>
             <th><label>Medicine Quantity</label></th>
         </tr>
+        @if(allMedicines.Count > 0)
+            {
+                @foreach (Medicine med in allMedicines)
+                {
+                    string medId = string.Format("medId{0}", med.id.ToString());
+                    string medName = string.Format("medName{0}", med.id.ToString());
+                    string medCategory = string.Format("medCategory{0}", med.id.ToString());
+                    string medQty = string.Format("medQty{0}", med.id.ToString());
+                    <tr>
+                        <th><label id=@medId>@med.id</label></th>
+                        <th><label id=@medName>@med.name</label></th>
+                        <th><label id=@medCategory>@med.category</label></th>
+                        <th><label id=@medQty>@med.quantity</label></th>
+                    </tr>
+                }
+            }
     </table>
     @if (allMedicines.Count == 0)
     {
