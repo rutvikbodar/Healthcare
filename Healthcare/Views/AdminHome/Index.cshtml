@@ -4,6 +4,8 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
+    Layout = "_Layout";
+    Layout = "AdminLayout";
     string loggedInUser = "";
     if (TempData.Peek("loggedInUser") != null)
     {
@@ -14,38 +16,9 @@
 
 <html>
 <head>
-    <style>
-        .navBar{
-            display: flex;
-            align-items : center;
-            justify-content : flex-end;
-            height : 60px;
-            background-color : yellow;
-        }
-        .button{
-            background-color : blue;
-            color : white;
-            border : none;
-            padding : 10px;
-            cursor : pointer;
-        }
-    </style>
     <title>Admin Home</title>
 </head>
 <body>
-    <div class="navBar">
-        <div>
-            <label id="welcomeUserName">Logged In User : </label>
-            @loggedInUser
-            <a href="/adminhome">Home</a>
-            <a href="/login">Logout</a>
-        </div>
-    </div>
-    <div>
-        <button id="addMedicine" class="button">Add Medicine Details</button>
-        <button id="viewAllDonateData" class="button">View All User Donate Data</button>
-        <button id="viewAllRequestData" class="button">View All User Request Data</button>
-    </div>
     <h1>Admin Home</h1>
 </body>
 </html>
