@@ -70,6 +70,9 @@ namespace Healthcare
                 routes.MapRoute(
                     name: "adminhome",
                     template: "{controller=AdminHome}/{action=Index}");
+                routes.MapRoute(
+                    name: "addmedicine",
+                    template: "{controller=AddMedicine}/{action=Index}");
             });
             var scope = app.ApplicationServices.CreateScope();
             var context = scope.ServiceProvider.GetService<HealthcareDbContext>();

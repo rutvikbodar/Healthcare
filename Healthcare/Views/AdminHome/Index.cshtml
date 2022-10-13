@@ -6,11 +6,6 @@
 @{
 
     Layout = "AdminLayout";
-    string loggedInUser = "";
-    if (TempData.Peek("loggedInUser") != null)
-    {
-        loggedInUser = TempData.Peek("loggedInUser").ToString();
-    }
     List<Medicine> allMedicines = ViewBag.allMedicines as List<Medicine>;
 }
 <!DOCTYPE html>
