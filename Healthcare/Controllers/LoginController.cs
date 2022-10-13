@@ -47,8 +47,16 @@ namespace Healthcare.Controllers
                 }
                 else
                 {
-                    ViewBag.errorMessage = "Logged in successfully";
-                    return View();
+                    if (searchedUser.username == "Admin")
+                    {
+                        ViewBag.errorMessage = "Admin Logged in successfully";
+                        return View();
+                    }
+                    else
+                    {
+                        ViewBag.errorMessage = "Logged in successfully";
+                        return View();
+                    }
                 }
             }
         }
