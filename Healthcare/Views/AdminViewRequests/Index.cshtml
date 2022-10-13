@@ -5,7 +5,8 @@
 *@
 @{
     Layout = "AdminLayout";
-    List<Request> allRequests = ViewBag.allRequests as List<Request>;
+ List<Request> allRequests = ViewBag.allRequests as List<Request>;
+
 }
 
 <!DOCTYPE html>
@@ -49,12 +50,13 @@
                     <th><label id=@medQty>@allRequests[i].requestedQuantity</label></th>
                     <th><label id=@reqName>@allRequests[i].requestorName</label></th>
                     <th><label id=@delAddress>@allRequests[i].deliveredAddress</label></th>
-                    <th><label id=@reqDate>@allRequests[i].requestedDate</label></th>
+                    <th><label id=@reqDate>@allRequests[i].requestedDate.ToString("dd/MM/yyyy")</label></th>
                 </tr>
             }
         }
     </table>
-    @if (allRequests.Count == 0) { 
+    @if (allRequests.Count == 0)
+    {
         <label id="noData">No data found</label>
     }
 </body>
