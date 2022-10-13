@@ -32,17 +32,17 @@
         </tr>
         @if(allMedicines.Count > 0)
             {
-                @foreach (Medicine med in allMedicines)
+                @for(int i=0;i<allMedicines.Count;i++)
                 {
-                    string medId = string.Format("medId{0}", med.id.ToString());
-                    string medName = string.Format("medName{0}", med.id.ToString());
-                    string medCategory = string.Format("medCategory{0}", med.id.ToString());
-                    string medQty = string.Format("medQty{0}", med.id.ToString());
+                    string medId = string.Format("medId{0}", i);
+                    string medName = string.Format("medName{0}",i);
+                    string medCategory = string.Format("medCategory{0}",i);
+                    string medQty = string.Format("medQty{0}",i);
                     <tr>
-                        <th><label id=@medId>@med.id</label></th>
-                        <th><label id=@medName>@med.name</label></th>
-                        <th><label id=@medCategory>@med.category</label></th>
-                        <th><label id=@medQty>@med.quantity</label></th>
+                        <th><label id=@medId>@allMedicines[i].id</label></th>
+                        <th><label id=@medName>@allMedicines[i].name</label></th>
+                        <th><label id=@medCategory>@allMedicines[i].category</label></th>
+                        <th><label id=@medQty>@allMedicines[i].quantity</label></th>
                     </tr>
                 }
             }

@@ -51,6 +51,7 @@ namespace Healthcare.Controllers
                     req.Id = id;
                     req.requestorName = TempData.Peek("loggedInUsername").ToString();
                     req.deliveredAddress = TempData.Peek("loggedInAddress").ToString();
+                    req.requestedDate = DateTime.Today;
                     context.requests.Add(req);
                     context.SaveChanges();
                     return RedirectToAction("Index", "UserHome");

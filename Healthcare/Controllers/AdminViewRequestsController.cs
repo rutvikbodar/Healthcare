@@ -22,6 +22,7 @@ namespace Healthcare.Controllers
 
         public IActionResult Index()
         {
+            ViewBag.allRequests = context.requests.ToList();
             return View();
         }
     }

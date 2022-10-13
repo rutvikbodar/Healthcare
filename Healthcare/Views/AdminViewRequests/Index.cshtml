@@ -4,8 +4,8 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
-
     Layout = "AdminLayout";
+    List<Request> allRequests = ViewBag.allRequests as List<Request>;
 }
 
 <!DOCTYPE html>
@@ -33,6 +33,29 @@
             <th><label>Requested Date</label></th>
 
         </tr>
+        @if (allRequests.Count > 0)
+        {
+            @for (int i = 0; i < allRequests.Count; i++)
+            {
+                string medCategory = String.Format("medCategory{0}", i);
+                string medName = String.Format("medName{0}", i);
+                string medQty = String.Format("medQty{0}", i);
+                string reqName = String.Format("reqName{0}", i);
+                string delAddress = String.Format("delAddress{0}", i);
+                string reqDate = String.Format("reqDate{0}", i);
+                <tr>
+                    <th><label id=@medCategory>@allRequests[i].medicineCatagory</label></th>
+                    <th><label id=@medName>@allRequests[i].medicineName</label></th>
+                    <th><label id=@medQty>@allRequests[i].requestedQuantity</label></th>
+                    <th><label id=@reqName>@allRequests[i].requestorName</label></th>
+                    <th><label id=@delAddress>@allRequests[i].deliveredAddress</label></th>
+                    <th><label id=@reqDate>@allRequests[i].requestedDate</label></th>
+                </tr>
+            }
+        }
     </table>
+    @if (allRequests.Count == 0) { 
+        <label id="noData">No data found</label>
+    }
 </body>
 </html>
