@@ -19,6 +19,7 @@ namespace Healthcare.Controllers
         [Route("adminhome")]
         public IActionResult Index()
         {
+            ViewBag.allMedicines = context.medicines.ToList();
             return View();
         }
     }

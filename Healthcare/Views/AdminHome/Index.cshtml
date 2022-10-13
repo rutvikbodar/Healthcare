@@ -4,21 +4,41 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
-    Layout = "_Layout";
+
     Layout = "AdminLayout";
     string loggedInUser = "";
     if (TempData.Peek("loggedInUser") != null)
     {
         loggedInUser = TempData.Peek("loggedInUser").ToString();
     }
+    List<Medicine> allMedicines = ViewBag.allMedicines as List<Medicine>;
 }
 <!DOCTYPE html>
 
 <html>
 <head>
+    <style>
+        tr,th{
+            border : 1px solid black;
+            min-width : 300px;
+        }
+    </style>
     <title>Admin Home</title>
 </head>
 <body>
-    <h1>Admin Home</h1>
+    <h3><label>Available Medicine Details</label></h3>
+    <br />
+    <table>
+        <tr>
+            <th><label>Medicine Id</label></th>
+            <th><label>Medicine Name</label></th>
+            <th><label>Medicine Category</label></th>
+            <th><label>Medicine Quantity</label></th>
+        </tr>
+    </table>
+    @if (allMedicines.Count == 0)
+    {
+        <label id="noData">No medicines found</label>
+    }
 </body>
 </html>
