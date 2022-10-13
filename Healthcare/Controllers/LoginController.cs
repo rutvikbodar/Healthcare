@@ -49,8 +49,7 @@ namespace Healthcare.Controllers
                 {
                     if (searchedUser.username == "Admin")
                     {
-                        ViewBag.errorMessage = "Admin Logged in successfully";
-                        return View();
+                        return RedirectToAction("Index", "AdminHome");
                     }
                     else
                     {

@@ -14,5 +14,6 @@ namespace Healthcare.Models
         }
 
         public DbSet<User> users { get; set; }
+        public DbSet<Medicine> medicines { get; set; }
     }
 }
