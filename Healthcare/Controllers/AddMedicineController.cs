@@ -36,7 +36,15 @@ namespace Healthcare.Controllers
             {
                 int id = context.medicines.ToList().Count + 1;
                 medicine.id = id;
-                context.medicines.Add(medicine);
+                Medicine searchedMedicine = context.medicines.FirstOrDefault(med => med.name == medicine.name);
+                if (searchedMedicine == null)
+                {
+                    context.medicines.Add(medicine);
+                }
+                else
+                {
+                    searchedMedicine.quantity = searchedMedicine.quantity + medicine.quantity;
+                }
                 context.SaveChanges();
                 System.Diagnostics.Debug.WriteLine(context.medicines.ToList().Count);
                 return RedirectToAction("Index", "AdminHome");
