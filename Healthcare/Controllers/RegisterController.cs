@@ -27,8 +27,18 @@ namespace Healthcare.Controllers
         [Route("register/")]
         public IActionResult Index(User user)
         {
-            ViewBag.errorMessage = "form submitted";
-            return View();
+            if (user == null || user.username == null || user.password == null || user.gender == null  || user.address==null || user.username.Length<3 || user.password.Length<5 || user.address.Length<6 || user.age<18 || user.age > 100)
+            {
+                ViewBag.errorMessage = "Invalid Input";
+                return View();
+            }
+            else
+            {
+                context.users.Add(user);
+                context.SaveChanges();
+                return RedirectToAction("Login", "Login");
+            }
+            
         }
     }
 }
