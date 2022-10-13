@@ -34,14 +34,14 @@
     <h3><label>Request Medicine</label></h3>
     <form asp-action="Index" method="post">
         <select asp-for="medicineCatagory" id="medCategory">
-            <option>Select Catagory</option>
+            <option value="null">Select Catagory</option>
             @foreach (string op in catagories)
             {
                 <option value=@op>@op</option>
             }
         </select>
         <select asp-for="medicineName" id="medName">
-            <option>Select Med Name </option>
+            <option value="null">Select Med Name </option>
             @foreach (string name in names)
             {
                 <option value=@name>@name</option>

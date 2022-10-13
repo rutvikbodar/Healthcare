@@ -29,9 +29,33 @@ namespace Healthcare.Controllers
         [Route("/userRequestMedicine")]
         public IActionResult Index(Request req)
         {
-            ViewBag.errorMessage = "Invalid Input";
-            ViewBag.medicineList = context.medicines.ToList();
-            return View();
+            if(req==null || req.medicineCatagory=="null" || req.medicineName=="null" || req.requestedQuantity < 1)
+            {
+                ViewBag.errorMessage = "Invalid Input";
+                ViewBag.medicineList = context.medicines.ToList();
+                return View();
+            }
+            else
+            {
+                Medicine searchedMed = context.medicines.FirstOrDefault(med => med.name == req.medicineName);
+                if (searchedMed.quantity < req.requestedQuantity)
+                {
+                    ViewBag.errorMessage = "Invalid Input";
+                    ViewBag.medicineList = context.medicines.ToList();
+                    return View();
+                }
+                else
+                {
+                    searchedMed.quantity -= req.requestedQuantity;
+                    int id = context.requests.ToList().Count + 1;
+                    req.Id = id;
+                    req.requestorName = TempData.Peek("loggedInUsername").ToString();
+                    req.deliveredAddress = TempData.Peek("loggedInAddress").ToString();
+                    context.requests.Add(req);
+                    context.SaveChanges();
+                    return RedirectToAction("Index", "UserHome");
+                }
+            }
         }
     }
 }
