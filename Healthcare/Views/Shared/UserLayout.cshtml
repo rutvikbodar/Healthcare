@@ -1,0 +1,51 @@
+﻿@{
+    Layout = "_Layout";
+    string loggedInUser = "";
+    if (TempData.Peek("loggedInUsername") != null)
+    {
+        loggedInUser = TempData.Peek("loggedInUsername").ToString();
+    }
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <style>
+        .navBar {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            height: 60px;
+            background-color: yellow;
+        }
+
+        .button {
+            background-color: blue;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="navBar">
+            <div>
+                <label id="welcomeUserName">Logged In User : </label>
+                @loggedInUser
+                <a href="/userhome">Home</a>
+                <a href="/login">Logout</a>
+            </div>
+        </div>
+        <div>
+            <a href="/userRequestMedicine"><button id="requestMedicine" class="button">Request Medicine</button></a>
+            <a href="#"><button id="donateMedicine" class="button">Donate Medicine</button></a>
+            <a href="#"><button id="viewDonateMedicine" class="button">View Donate Medicine</button></a>
+        </div>
+        @RenderBody()
+    </div>
+</body>
+</html>

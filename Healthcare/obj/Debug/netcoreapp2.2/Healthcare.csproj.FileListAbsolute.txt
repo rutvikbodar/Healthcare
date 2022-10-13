@@ -39,3 +39,6 @@ C:\Users\LENOVO-PC\Desktop\Healthcare\Healthcare\obj\Debug\netcoreapp2.2\Razor\V
 C:\Users\LENOVO-PC\Desktop\Healthcare\Healthcare\obj\Debug\netcoreapp2.2\Razor\Views\AddMedicine\Index.cshtml.g.cs
 C:\Users\LENOVO-PC\Desktop\Healthcare\Healthcare\obj\Debug\netcoreapp2.2\Razor\Views\AdminViewDonations\Index.cshtml.g.cs
 C:\Users\LENOVO-PC\Desktop\Healthcare\Healthcare\obj\Debug\netcoreapp2.2\Razor\Views\AdminViewRequests\Index.cshtml.g.cs
+C:\Users\LENOVO-PC\Desktop\Healthcare\Healthcare\obj\Debug\netcoreapp2.2\Razor\Views\UserHome\Index.cshtml.g.cs
+C:\Users\LENOVO-PC\Desktop\Healthcare\Healthcare\obj\Debug\netcoreapp2.2\Razor\Views\Shared\UserLayout.cshtml.g.cs
+C:\Users\LENOVO-PC\Desktop\Healthcare\Healthcare\obj\Debug\netcoreapp2.2\Razor\Views\UserRequestMedicine\Index.cshtml.g.cs

@@ -47,16 +47,15 @@ namespace Healthcare.Controllers
                 }
                 else
                 {
+                    TempData["loggedInUsername"] = searchedUser.username;
+                    TempData["loggedInAddress"] = searchedUser.address;
                     if (searchedUser.username == "Admin")
                     {
-                        TempData["loggedInUsername"] = searchedUser.username;
-                        TempData["loggedInAddress"] = searchedUser.address;
                         return RedirectToAction("Index", "AdminHome");
                     }
                     else
                     {
-                        ViewBag.errorMessage = "Logged in successfully";
-                        return View();
+                        return RedirectToAction("Index", "UserHome");
                     }
                 }
             }
