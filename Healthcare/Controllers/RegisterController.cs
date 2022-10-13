@@ -15,9 +15,19 @@ namespace Healthcare.Controllers
         {
             this.context = context;
         }
-
+        [HttpGet]
+        [Route("register/")]
         public IActionResult Index()
         {
+            ViewBag.errorMessage = "";
+            return View();
+        }
+
+        [HttpPost]
+        [Route("register/")]
+        public IActionResult Index(User user)
+        {
+            ViewBag.errorMessage = "form submitted";
             return View();
         }
     }
