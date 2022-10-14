@@ -16,18 +16,42 @@
     </style>
     <title>Medicine Request Details</title>
 </head>
-    <body>
-        <h3><label>All Requests Details</label></h3>
-        <br />
-        <table>
-            <tr>
-                <th><label>Medicine Category</label></th>
-                <th><label>Medicine Name</label></th>
-                <th><label>Requested Quantity</label></th>
-                <th><label>Requestor Name</label></th>
-                <th><label>Delivered Address</label></th>
-                <th><label>Requested Date</label></th>
-            </tr>
-        </table>
-    </body>
+<body>
+    <h3><label>All Requests Details</label></h3>
+    <br />
+    <table>
+        <tr>
+            <th><label>Medicine Category</label></th>
+            <th><label>Medicine Name</label></th>
+            <th><label>Requested Quantity</label></th>
+            <th><label>Requestor Name</label></th>
+            <th><label>Delivered Address</label></th>
+            <th><label>Requested Date</label></th>
+        </tr>
+        @if (userRequests.Count > 0)
+        {
+            @for (int i = 0; i < userRequests.Count; i++)
+            {
+                string medCategory = String.Format("medCategory{0}", i);
+                string medName = String.Format("medName{0}", i);
+                string medQty = String.Format("medQty{0}", i);
+                string reqName = String.Format("reqName{0}", i);
+                string delAddress = String.Format("delAddress{0}", i);
+                string reqDate = String.Format("reqDate{0}", i);
+                <tr>
+                    <th><label id=@medCategory>@userRequests[i].medicineCatagory</label></th>
+                    <th><label id=@medName>@userRequests[i].medicineName</label></th>
+                    <th><label id=@medQty>@userRequests[i].requestedQuantity</label></th>
+                    <th><label id=@reqName>@userRequests[i].requestorName</label></th>
+                    <th><label id=@delAddress>@userRequests[i].deliveredAddress</label></th>
+                    <th><label id=@reqDate>@userRequests[i].requestedDate.ToString("dd/MM/yyyy")</label></th>
+                </tr>
+            }
+        }
+    </table>
+    @if (userRequests.Count == 0)
+    {
+        <label id="noData">No data found</label>
+    }
+</body>
 </html>

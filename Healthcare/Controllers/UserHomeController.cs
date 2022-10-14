@@ -19,7 +19,16 @@ namespace Healthcare.Controllers
         [Route("userhome")]
         public IActionResult Index()
         {
-            ViewBag.userRequests = context.requests.ToList();
+            List<Request> allRequests = context.requests.ToList();
+            List<Request> userRequests = new List<Request>();
+            foreach(Request req in allRequests)
+            {
+                if (req.requestorName == TempData.Peek("loggedInUsername").ToString())
+                {
+                    userRequests.Add(req);
+                }
+            }
+            ViewBag.userRequests = userRequests;
             return View();
         }
     }
