@@ -6,6 +6,7 @@
 @{
 
     Layout = "AdminLayout";
+    List<Donation> allDonations = ViewBag.allDonations as List<Donation>;
 }
 
 <!DOCTYPE html>
@@ -33,6 +34,30 @@
             <th><label>Donated Date</label></th>
 
         </tr>
+        @if (allDonations.Count > 0)
+        {
+            @for (int i = 0; i < allDonations.Count; i++)
+            {
+                string medCategory = String.Format("medCategory{0}", i);
+                string medName = String.Format("medName{0}", i);
+                string medQty = String.Format("medQty{0}", i);
+                string donorName = String.Format("donorName{0}", i);
+                string pickupAddress = String.Format("pickupAddress{0}", i);
+                string donateDate = String.Format("donateDate{0}", i);
+                <tr>
+                    <th><label id=@medCategory>@allDonations[i].medicineCatagory</label></th>
+                    <th><label id=@medName>@allDonations[i].medicineName</label></th>
+                    <th><label id=@medQty>@allDonations[i].donateQuantity</label></th>
+                    <th><label id=@donorName>@allDonations[i].donorName</label></th>
+                    <th><label id=@pickupAddress>@allDonations[i].pickupAddress</label></th>
+                    <th><label id=@donateDate>@allDonations[i].donatedDate.ToString("dd/MM/yyyy")</label></th>
+                </tr>
+            }
+        }
     </table>
+    @if (allDonations.Count == 0)
+    {
+        <label id="noData">No data found</label>
+    }
 </body>
 </html>

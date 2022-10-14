@@ -20,6 +20,7 @@ namespace Healthcare.Controllers
         [Route("/adminViewDonations")]
         public IActionResult Index()
         {
+            ViewBag.allDonations = context.donations.ToList();
             return View();
         }
     }
