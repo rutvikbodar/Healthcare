@@ -22,7 +22,7 @@
 </head>
 <body>
     <h3><label>Donate Medicine</label></h3>
-    <form>
+    <form asp-action="Index" method="post">
         <input id="medCategory" asp-for="medicineCatagory" placeholder="Medicine Category" type="text"/>
         <input id="donateMedName" asp-for="medicineName" placeholder="Medicine Name" type="text"/>
         <input id="quantity" asp-for="donateQuantity" placeholder="Quantity" type="number"/>

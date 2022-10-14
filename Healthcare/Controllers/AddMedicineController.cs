@@ -36,7 +36,7 @@ namespace Healthcare.Controllers
             {
                 int id = context.medicines.ToList().Count + 1;
                 medicine.id = id;
-                Medicine searchedMedicine = context.medicines.FirstOrDefault(med => med.name == medicine.name);
+                Medicine searchedMedicine = context.medicines.FirstOrDefault(med => med.name == medicine.name && med.category==medicine.category);
                 if (searchedMedicine == null)
                 {
                     context.medicines.Add(medicine);
