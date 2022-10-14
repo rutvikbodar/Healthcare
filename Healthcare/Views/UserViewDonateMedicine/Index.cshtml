@@ -1,0 +1,57 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "UserLayout";
+    List<Donation> userDonations = ViewBag.userDonations as List<Donation>;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        tr, th {
+            border: 1px solid black;
+            min-width: 200px;
+        }
+    </style>
+    <title>User Donate Details</title>
+</head>
+<body>
+    <h3><label>User Donate Details</label></h3>
+    <br />
+    <table>
+        <tr>
+            <th><label>Medicine Category</label></th>
+            <th><label>Medicine Name</label></th>
+            <th><label>Donated Quantity</label></th>
+            <th><label>Donor Name</label></th>
+            <th><label>Pickup Address</label></th>
+            <th><label>Donated Date</label></th>
+        </tr>
+        @if (userDonations.Count > 0)
+        {
+            @for (int i = 0; i < userDonations.Count; i++)
+            {
+                string medCategory = String.Format("medCategory{0}", i);
+                string medName = String.Format("medName{0}", i);
+                string medQty = String.Format("medQty{0}", i);
+                string reqName = String.Format("reqName{0}", i);
+                string pickAddress = String.Format("pickAddress{0}", i);
+                string donatedDate = String.Format("donatedDate{0}", i);
+                <tr>
+                    <th><label id=@medCategory>@userDonations[i].medicineCatagory</label></th>
+                    <th><label id=@medName>@userDonations[i].medicineName</label></th>
+                    <th><label id=@medQty>@userDonations[i].donateQuantity</label></th>
+                    <th><label id=@reqName>@userDonations[i].donorName</label></th>
+                    <th><label id=@pickAddress>@userDonations[i].pickupAddress</label></th>
+                    <th><label id=@donatedDate>@userDonations[i].donatedDate.ToString("dd/MM/yyyy")</label></th>
+                </tr>
+            }
+        }
+    </table>
+    @if (userDonations.Count == 0)
+    {
+        <label id="noData">No data found</label>
+    }
+</body>
+</html>

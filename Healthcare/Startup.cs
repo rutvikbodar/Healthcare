@@ -88,6 +88,9 @@ namespace Healthcare
                 routes.MapRoute(
                     name: "userDonateMedicine",
                     template: "{controller=UserDonateMedicine}/{action=Index}");
+                routes.MapRoute(
+                    name: "userViewDonateMedicine",
+                    template: "{controller=UserViewDonateMedicine}/{action=Index}");
             });
             var scope = app.ApplicationServices.CreateScope();
             var context = scope.ServiceProvider.GetService<HealthcareDbContext>();

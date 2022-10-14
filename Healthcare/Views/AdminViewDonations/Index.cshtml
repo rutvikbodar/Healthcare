@@ -43,14 +43,14 @@
                 string medQty = String.Format("medQty{0}", i);
                 string donorName = String.Format("donorName{0}", i);
                 string pickupAddress = String.Format("pickupAddress{0}", i);
-                string donateDate = String.Format("donateDate{0}", i);
+                string donatedDate = String.Format("donatedDate{0}", i);
                 <tr>
                     <th><label id=@medCategory>@allDonations[i].medicineCatagory</label></th>
                     <th><label id=@medName>@allDonations[i].medicineName</label></th>
                     <th><label id=@medQty>@allDonations[i].donateQuantity</label></th>
                     <th><label id=@donorName>@allDonations[i].donorName</label></th>
                     <th><label id=@pickupAddress>@allDonations[i].pickupAddress</label></th>
-                    <th><label id=@donateDate>@allDonations[i].donatedDate.ToString("dd/MM/yyyy")</label></th>
+                    <th><label id=@donatedDate>@allDonations[i].donatedDate.ToString("dd/MM/yyyy")</label></th>
                 </tr>
             }
         }

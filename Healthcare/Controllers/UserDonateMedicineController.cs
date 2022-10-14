@@ -49,8 +49,8 @@ namespace Healthcare.Controllers
                 donation.donatedDate = DateTime.Now;
                 context.donations.Add(donation);
                 context.SaveChanges();
-                ViewBag.errorMessage = "Succeed";
-                return View();
+
+                return RedirectToAction("Index", "UserViewDonateMedicine");
             }
         }
     }
